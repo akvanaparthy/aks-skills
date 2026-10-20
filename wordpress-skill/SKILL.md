@@ -91,9 +91,10 @@ tool isn't available, ask the user to paste screenshots — don't skip the check
 A theme's job is to be crawlable and fast: one `<h1>` per template, semantic landmarks,
 breadcrumbs block where it fits, no render-blocking fonts, responsive images with
 dimensions, server-rendered content, and no duplicate meta/schema output when an SEO
-plugin is active. Schema, answer-engine and AI-search optimisation (AEO/GEO, `llms.txt`,
-structured data strategy) belong in a plugin or a dedicated skill — if the user has an
-SEO/AEO/GEO skill installed, defer to it for that layer.
+plugin is active. Structured-data strategy, metadata, robots/sitemap, snippet controls and
+AI-search visibility are the `seo-aeo-geo` skill's job (same repo, `seo-aeo-geo-skill/`);
+when it's installed, defer to its ground truth and priorities rather than this file's
+notes — in particular, don't add FAQPage/HowTo schema or `llms.txt` as "SEO wins".
 
 ## Verification
 

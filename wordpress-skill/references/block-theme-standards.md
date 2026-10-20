@@ -131,9 +131,10 @@ works without JS and is indexable.
 Crawlable server-rendered markup, one H1, breadcrumbs block where appropriate,
 semantic HTML, fast loading, responsive images, `rel` attributes on pagination,
 `noindex` on internal site search results, and **not** printing titles/meta/canonical/
-schema that an active SEO plugin already prints. Anything beyond that (structured data
-strategy, FAQ/answer-first content, `llms.txt`, AI-crawler policy) lives in a plugin or
-a separate SEO/AEO/GEO skill.
+schema that an active SEO plugin already prints. Anything beyond that (structured data,
+metadata, robots/sitemap, snippet controls, AI-crawler policy) is handled by the
+`seo-aeo-geo` skill — follow its priorities, and don't add FAQPage/HowTo schema or
+`llms.txt` on your own initiative.
 
 ## 9. WordPress.org review essentials (if submitting)
 
