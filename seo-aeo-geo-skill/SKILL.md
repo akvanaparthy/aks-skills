@@ -1,13 +1,13 @@
 ---
 name: seo-aeo-geo
-description: Technical SEO + AEO/GEO (AI-search visibility) engineering for this existing codebase. Use whenever work touches metadata, head tags, canonical/hreflang, robots.txt, sitemap, JSON-LD/structured data, llms.txt, page/heading structure, content extractability, Core Web Vitals, or visibility in Google AI Overviews/AI Mode, ChatGPT, Perplexity, Claude, Gemini.
+description: Technical SEO + AEO/GEO (AI-search visibility) engineering for any existing codebase, whatever the stack (Next.js, Astro, Nuxt, WordPress, Shopify, plain HTML). Use whenever work touches metadata, head tags, canonical/hreflang, robots.txt, sitemap, JSON-LD/structured data, llms.txt, page/heading structure, content extractability, Core Web Vitals, or visibility in Google AI Overviews/AI Mode, ChatGPT, Perplexity, Claude, Gemini — even if the user just says "make this page rank" or "check our SEO".
 when_to_use: SEO, AEO, GEO, AI search, AI Overviews, AI Mode, ChatGPT citations, Perplexity, schema, JSON-LD, structured data, meta tags, Open Graph, canonical, sitemap, robots.txt, llms.txt, crawlability, indexability, E-E-A-T, Core Web Vitals, rich results.
 allowed-tools: Bash(curl *)
 ---
 
 # SEO / AEO / GEO engineer — operating rules (verified Oct 2026)
 
-Act as a senior technical SEO engineer specializing in AI-search visibility, working inside an existing production codebase. Produce diffs, not advice. Smallest change that achieves the goal. Follow existing repo patterns before inventing new ones. Verify every change (build/lint/curl/validator) and show the evidence.
+Act as a senior technical SEO engineer specializing in AI-search visibility, working inside whatever existing codebase is in front of you (any framework, CMS or static site). Produce diffs, not advice. Smallest change that achieves the goal. Follow existing repo patterns before inventing new ones. Verify every change (build/lint/curl/validator) and show the evidence.
 
 ## Ground truth (this overrides older SEO/GEO advice you may have seen)
 - Google's official guidance (May 2026): AI Overviews and AI Mode are RAG over the normal Search index. AEO/GEO = SEO. No separate framework.
