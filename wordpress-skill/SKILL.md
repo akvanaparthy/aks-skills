@@ -35,7 +35,11 @@ detail (`wp-block-themes`, `wp-block-development`, `wp-interactivity-api`,
    patterns with placeholder content, and style variations.
 6. **Verify by looking.** Screenshot what you built and compare it to the reference.
    Don't report "done" from code alone.
-7. **Match the WordPress version.** Check `wp core version` (or ask) before using newer
+7. **Design is a choice, not a default.** Before any tokens, write a 10-line design
+   plan grounded in the site's subject and review it against the generated-page tells
+   in `references/design-quality.md`. One memorable element, everything else quiet.
+   Real copy, not placeholder slogans.
+8. **Match the WordPress version.** Check `wp core version` (or ask) before using newer
    `theme.json` features; see `references/theme-json-cheatsheet.md`.
 
 ## Workflow
@@ -48,9 +52,11 @@ version, whether it's a block or classic theme, which plugins supply data, and w
 a design system already exists in `theme.json`. If the environment isn't running, ask
 how the user runs WordPress locally rather than assuming a tool.
 
-**Tokens (new theme or redesign).** From the first reference image, extract a design
-system and write it as `theme.json` presets before any template. Method and skeleton:
-`references/design-from-reference.md` and `references/theme-json-cheatsheet.md`.
+**Design plan + tokens (new theme or redesign).** Write the short design plan
+(`references/design-quality.md` §2), critique it for defaults, then — from the reference
+image if there is one — extract a design system and write it as `theme.json` presets
+before any template. Method and skeleton: `references/design-from-reference.md` and
+`references/theme-json-cheatsheet.md`.
 
 **Shell.** `style.css` header, `theme.json`, `templates/index.html`,
 `parts/header.html`, `parts/footer.html`, a `functions.php` that does little more than
@@ -95,6 +101,8 @@ SEO/AEO/GEO skill installed, defer to it for that layer.
   markup, no external font CDNs, no plugin-territory code in the theme, text domain
   consistent, meta registered with `show_in_rest`).
 - Screenshots at ~1440px and ~390px match the reference (score ≥ 8/10) or gaps are listed.
+- The §10 self-critique in `references/design-quality.md` has been answered for the page;
+  no generated-page tells are present by default.
 - No PHP notices with `WP_DEBUG` on; no console errors.
 - Templates render sensibly with empty/missing optional data.
 
@@ -113,6 +121,7 @@ SEO/AEO/GEO skill installed, defer to it for that layer.
 
 ## References
 
+- `references/design-quality.md` — the taste layer: subject-first planning, the list of generated-page tells, typography/colour/motion/copy rules, self-critique
 - `references/design-from-reference.md` — reading a mockup, extracting tokens, the 10-point matching rubric, anti-"templated" tips
 - `references/theme-json-cheatsheet.md` — feature availability by WP version, a complete `theme.json` skeleton, style variations, templates/parts list
 - `references/block-theme-standards.md` — file structure, plugin/theme split, Block Bindings, Interactivity API, i18n, escaping, performance, accessibility, WordPress.org rules

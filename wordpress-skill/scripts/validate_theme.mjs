@@ -120,6 +120,28 @@ for (const f of markupFiles) {
   }
 }
 
+// generated-page tells (design-quality.md §3) — warnings only
+const allMarkup = markupFiles.map((f) => [f, fs.readFileSync(f, 'utf8')]);
+const tells = [
+  [/[→➜➔]\s*<\/(a|button|span|div)>/g, 'arrow glued to link/button text'],
+  [/\s·\s[^<]{1,40}\s·\s/g, 'middle-dot meta strings (A · B · C)'],
+  [/"textTransform":"uppercase"[^}]{0,80}"letterSpacing"/g, 'tracked-out all-caps label (eyebrow)'],
+  [/\b0[1-3]\s*<\/(span|p|div|h[1-6])>/g, 'numbered 01/02/03 markers — only if content is a sequence'],
+  [/#(?:0b0b0b|111111|111)\b/gi, 'tinted near-black standing in for black'],
+  [/rgba\(0,\s*0,\s*0,\s*0?\.1\)/g, 'the generic soft grey card shadow'],
+  [/[\u{1F300}-\u{1FAFF}]/gu, 'emoji used as icons'],
+];
+const tellCounts = new Map();
+for (const [f, src] of allMarkup) {
+  for (const [re, label] of tells) {
+    const n = (src.match(re) || []).length;
+    if (n) tellCounts.set(label, (tellCounts.get(label) || 0) + n);
+  }
+}
+for (const [label, n] of tellCounts) warn('design', `${label} ×${n} — a choice or a default? (design-quality.md §3)`);
+const hexAll = new Set(allMarkup.flatMap(([, s]) => (s.match(hexRe) || []).map((h) => h.toLowerCase())));
+if (['#f4f1ea', '#d97757'].some((h) => hexAll.has(h))) warn('design', 'cream + terracotta palette is the most common generated default');
+
 // pattern translation heuristic + text domain
 const patternFiles = walk(path.join(themeDir, 'patterns'), ['.php']);
 for (const f of patternFiles) {
