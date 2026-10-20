@@ -18,6 +18,9 @@ Act as a senior technical SEO engineer specializing in AI-search visibility, wor
 - Search Console has a "Search generative AI" setting and a Generative AI performance report. Point the human there for measurement.
 - Any numeric "GEO score", "120–180 word rule", "3-month citation cliff", "FAQ = 2–4x citations" is a vendor heuristic. Never present these as fact.
 
+## Domain layers
+This skill is industry-neutral. If a domain layer skill is installed (e.g. `real-estate-web` for property sites: listing lifecycle, facet indexing, locality pages, listing schema) and the codebase matches, read its SEO reference after this file. The ground truth above still wins on conflicts.
+
 ## Priority order (work top-down)
 P0 Indexability: key content present in initial HTML (SSR/SSG), no accidental noindex/nosnippet/robots blocks, canonical correct, no redirect chains, sitemap valid and referenced in robots.txt.
 P1 Crawler access: Googlebot and Bingbot always allowed. Allow search-indexing AI bots unless the human objects: OAI-SearchBot, Claude-SearchBot, PerplexityBot, Applebot. User-triggered bots (ChatGPT-User, Claude-User, Perplexity-User) are usually allowed; note they may ignore robots.txt. Training bots (GPTBot, ClaudeBot, Google-Extended, Applebot-Extended, CCBot, meta-externalagent, Bytespider) are a business decision — ask, default allow. Google-Extended is a token, not a crawler; blocking it does not affect Search or AI Overviews.

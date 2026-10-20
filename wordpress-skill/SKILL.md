@@ -15,6 +15,11 @@ If the official `WordPress/agent-skills` pack is installed, lean on it for WordP
 detail (`wp-block-themes`, `wp-block-development`, `wp-interactivity-api`,
 `wp-plugin-development`). This skill is about the decisions and the workflow.
 
+**Domain layers.** This skill is industry-neutral. If a domain layer skill is installed
+(e.g. `real-estate-web` for property sites) and the project matches, load it after this
+one; it adds the data model, page types and rules for that industry without changing
+anything here.
+
 ## Principles
 
 1. **Block theme by default.** Classic (PHP template) themes only when the user asks
