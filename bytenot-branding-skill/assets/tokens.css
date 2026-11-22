@@ -1,0 +1,120 @@
+/*
+ * Bytenot brand tokens. Values and pairings are the guidelines' own (pages 21, 25-28, 36).
+ * Put data-ground on a surface; everything inside reads the roles, never a hex.
+ *
+ * Only the eight colours, each at full strength: there is no quieter step, so
+ * secondary text, borders and rules use --ink.
+ */
+:root {
+  --bn-orange: #eb6140; /* Opulent Orange, the signature colour */
+  --bn-maroon: #4d1b1e; /* Maroon Oak */
+  --bn-mint: #e9ffef; /* Mint Chiffon: for symbol, logo and text on Orange; not a ground */
+  --bn-milk: #fcfcfc; /* Milk White: the light ground, and light text on Maroon */
+  --bn-orange-tint: #f8cabe;
+  --bn-maroon-tint: #eccacc;
+  --bn-mint-shade: #acc3b2;
+  --bn-grey: #bfbfbf;
+
+  /* Gabarito only, in Regular 400, Medium 500 and Bold 700 (pages 32-33). */
+  --bn-font: 'Gabarito', 'Gabarito Fallback', ui-sans-serif, system-ui, sans-serif;
+
+  /* Leading as a multiple of the size, tracking in ems: +30, -20, -10 (pages 34-36). */
+  --bn-heading-weight: 700;
+  --bn-heading-leading: 0.9;
+  --bn-heading-tracking: 0.03em;
+  --bn-subheading-weight: 500;
+  --bn-subheading-leading: 1;
+  --bn-subheading-tracking: -0.02em;
+  --bn-body-weight: 400;
+  --bn-body-size: 1.125rem; /* 18px */
+  --bn-body-leading: 1.3;
+  --bn-body-tracking: -0.01em;
+}
+
+/* Grounds that can carry a section of text. */
+[data-ground='milk'] {
+  --ground: var(--bn-milk);
+  --ink: var(--bn-maroon);
+  --display: var(--bn-orange);
+  --logo-symbol: var(--bn-orange);
+  --logo-word: var(--bn-maroon);
+}
+
+[data-ground='maroon'] {
+  --ground: var(--bn-maroon);
+  --ink: var(--bn-milk);
+  --display: var(--bn-orange);
+  --logo-symbol: var(--bn-orange);
+  --logo-word: var(--bn-milk);
+}
+
+[data-ground='maroon-tint'] {
+  --ground: var(--bn-maroon-tint);
+  --ink: var(--bn-maroon);
+  --display: var(--bn-maroon);
+  --logo-symbol: var(--bn-maroon);
+  --logo-word: var(--bn-maroon);
+}
+
+/* Mint is 3.17:1 on Orange: a few large words only. Set anything to be read
+   or filled in into a Milk White block. */
+[data-ground='orange'] {
+  --ground: var(--bn-orange);
+  --ink: var(--bn-mint);
+  --display: var(--bn-mint);
+  --logo-symbol: var(--bn-mint);
+  --logo-word: var(--bn-mint);
+}
+
+/* Ornament only: the given text colour is under 3:1 on each of these. */
+[data-ground='orange-tint'] {
+  --ground: var(--bn-orange-tint);
+  --ink: var(--bn-orange);
+  --display: var(--bn-orange);
+  --logo-symbol: var(--bn-orange);
+  --logo-word: var(--bn-orange);
+}
+
+[data-ground='mint-shade'] {
+  --ground: var(--bn-mint-shade);
+  --ink: var(--bn-mint);
+  --display: var(--bn-mint);
+  --logo-symbol: var(--bn-mint);
+  --logo-word: var(--bn-mint);
+}
+
+[data-ground='grey'] {
+  --ground: var(--bn-grey);
+  --ink: var(--bn-milk);
+  --display: var(--bn-milk);
+  --logo-symbol: var(--bn-milk);
+  --logo-word: var(--bn-milk);
+}
+
+[data-ground] {
+  background-color: var(--ground);
+  color: var(--ink);
+  font-family: var(--bn-font);
+}
+
+.bn-heading {
+  font-weight: var(--bn-heading-weight);
+  line-height: var(--bn-heading-leading);
+  letter-spacing: var(--bn-heading-tracking);
+  text-align: left;
+}
+
+.bn-subheading {
+  font-weight: var(--bn-subheading-weight);
+  line-height: var(--bn-subheading-leading);
+  letter-spacing: var(--bn-subheading-tracking);
+  text-align: left;
+}
+
+.bn-body {
+  font-weight: var(--bn-body-weight);
+  font-size: var(--bn-body-size);
+  line-height: var(--bn-body-leading);
+  letter-spacing: var(--bn-body-tracking);
+  text-align: left;
+}

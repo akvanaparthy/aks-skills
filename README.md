@@ -8,6 +8,7 @@ My own Claude Code / agent skills. Each folder is one skill (`SKILL.md` + option
 | [`wordpress-skill`](wordpress-skill/) | Build or modify modern WordPress block themes (and companion plugins) to current standards, matching reference images, without the generated-page look. |
 | [`seo-aeo-geo-skill`](seo-aeo-geo-skill/) | Technical SEO + AI-search visibility (AEO/GEO) engineering for an existing codebase: indexability, crawler access, metadata, JSON-LD, CWV, with verification. Modes: `audit`, `implement`, `review`. |
 | [`real-estate-web-skill`](real-estate-web-skill/) | Domain layer for property sites, loaded on top of the two above: data model and lifecycle, faceted search indexing, locality/project page strategy, listing schema, lead capture, plus India / US / UK-EU market rules. |
+| [`bytenot-branding-skill`](bytenot-branding-skill/) | Bytenot's brand guidelines made usable: the eight-colour palette and its approved pairings, logo files and clear space, Gabarito type, patterns, voice, web rules, and a checker script (`brand_check.py`) for audits. |
 
 How they fit: `wordpress-skill` builds the site, `seo-aeo-geo` handles search and AI
 visibility, and `real-estate-web` adds only what is different about property sites.
@@ -23,6 +24,7 @@ mkdir -p .claude/skills
 cp -r /tmp/aks-skills/wordpress-skill .claude/skills/wordpress-skill
 cp -r /tmp/aks-skills/seo-aeo-geo-skill .claude/skills/seo-aeo-geo
 cp -r /tmp/aks-skills/real-estate-web-skill .claude/skills/real-estate-web   # property sites only
+cp -r /tmp/aks-skills/bytenot-branding-skill .claude/skills/bytenot-branding   # Bytenot work only
 cp .claude/skills/wordpress-skill/CLAUDE.md ./CLAUDE.md   # then fill in the braces
 ```
 
